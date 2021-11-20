@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv2</title>
+</head>
+
+<body>
+
+    <div align="center">
+        <b>请选择您的爱好</b>
+        <br />
+    </div>
+
+    <div id="divlist" align="center">
+        <input type="checkbox" class="checkList" value="内卷">内卷
+        <input type="checkbox" class="checkList" value="疯狂内卷">疯狂内卷
+        <input type="checkbox" class="checkList" value="拼命内卷">拼命内卷
+        <input type="checkbox" class="checkList" value="使劲内卷">使劲内卷
+        <br />
+        <input id="checkAll" type="button" value="全选">
+        <input id="unCheckAll" type="button" value="全不选">
+        <input id="reverseCheck" type="button" value="反选">
+    </div>
+    <script>
+        let checkAll = document.getElementById("checkAll");
+        let unCheckAll = document.getElementById("unCheckAll");
+        let reverseCheck = document.getElementById("reverseCheck");
+        let checkList = document.getElementsByClassName("checkList");
+        console.log(checkList);
+        let time = 0;
+        checkAll.onclick = function () {
+            time++;
+            if (time % 2 == 1) {
+                for (let i = 0; i < checkList.length; i++) {
+                    checkList[i].checked = true;
+                }
+            } else {
+                for (let i = 0; i < checkList.length; i++) {
+                    checkList[i].checked = false;
+                }
+            }
+        }
+        unCheckAll.onclick = function () {
+            time++;
+            if (time % 2 == 1) {
+                for (let i = 0; i < checkList.length; i++) {
+                    checkList[i].checked = true;
+                }
+            } else {
+                for (let i = 0; i < checkList.length; i++) {
+                    checkList[i].checked = false;
+                }
+            }
+        }
+        reverseCheck.onclick = function () {
+            for (let i = 0; i < checkList.length; i++) {
+                if (checkList[i].checked == true) {
+                    checkList[i].checked = false;
+                } else {
+                    checkList[i].checked = true;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
